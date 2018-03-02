@@ -1,0 +1,2 @@
+read1.py - converts one sequence into SVM format.
+Single_sequence - converts training sequence and testing sequence to SVM format. It also uses SVM to predict classification of the test sequence.
