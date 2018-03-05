@@ -27,7 +27,7 @@ def reading(y,z):
                #print(len(topology))
         #print(file_3)
         
-    dict_top ={'I':1, 'M':2, 'O':3}
+    dict_top ={'I':1, 'M':2, 'O':3, 'G':4}
     #rint(top_1)
     for al in topology:
         splitting= list(al)
@@ -35,21 +35,22 @@ def reading(y,z):
         for val in splitting:
            #print(val)
             for key,value in dict_top.items():
-               #print(key)
-               #print(value)
+                #print(key)
+                #print(value)
                 if val == key:
                     label.append(value)
    #print(label)
     y = np.array(label)
    #print(y)
     zero_array = np.zeros(shape=(20,20),dtype=int)
+    #print(zero_array)
     np.fill_diagonal(zero_array,1)
     zero_1 = zero_array.tolist()
-   #print(zero_1)
+   # print(zero_1)
     dict_con = {}
     for zero_array, acid in zip(zero_1,amino_list):
         dict_con[acid]=zero_array
-   #print(dict_con)
+    print(dict_con)
     window_size = 3
     pad =int(window_size//2)
    #print(pad)
@@ -76,7 +77,10 @@ def reading(y,z):
             read_window.append(nw_list)
    #print(read_window)
     x= np.array(read_window)
-   #print(x)
+    #print('====')
+    #print(x)
+    #print(x.shape)
+    #print('======')    
   
 
     file_a = open(z,'r')
@@ -105,7 +109,7 @@ def reading(y,z):
                
         
         
-    dict_topa ={'I':1, 'M':2, 'O':3}
+    dict_topa ={'I':1, 'M':2, 'O':3, 'G':4}
     
     for al in topologya:
         splittinga= list(al)

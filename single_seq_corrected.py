@@ -2,7 +2,9 @@ from sklearn import svm
 import numpy as np
 def reading(y,z):
     file_1 = open(y,'r')
+    #print(file_1)
     file_2 = file_1.read().splitlines()
+    #print(file_2)
     id = []
     sequence = []
     topology = []
@@ -11,60 +13,74 @@ def reading(y,z):
     splitting = []
     amino_list =['A','C','D','E','F','G','H','I','K','L','M','N','P','Q','R','S','T','V','W','Y']
     dict_2 = {}
+    
     for line in file_2:
+        #print(line)
         file_3 = line.rsplit('\n')
         for line in file_3:
             if line.startswith('>'):
                 d = line.split('>')
                 id.append(d)
-               #print(id)
+            
             elif line.startswith('M'):
                 sequence.append(line)
             else:
                 topology.append(line)
-               #print(topology)
+                #print(topology)
                #print(len(topology))
         #print(file_3)
-    #print(len(sequence[0]))   
-    dict_top ={'I':1, 'M':2, 'O':3}
+    #print(len(sequence[0]))
+    #print(topology)   
+    dict_top ={'I':1, 'M':2, 'O':3, 'G':4}
     #rint(top_1)
     for al in topology:
         splitting= list(al)
-       #print(splitting)
+        #print(splitting)
         for val in splitting:
-           #print(val)
+            #print(val)
             for key,value in dict_top.items():
-               #print(key)
-               #print(value)
+                #print(key)
+                #print(value)
                 if val == key:
                     label.append(value)
-   #print(label)
+    #print(label)
+    #print()
     y = np.array(label)
-   #print(y)
+    #print(y)
     zero_array = np.zeros(shape=(20,20),dtype=int)
     np.fill_diagonal(zero_array,1)
+    #print(zero_array)
     zero_1 = zero_array.tolist()
-   #print(zero_1)
+    #print(zero_1)
+    
     dict_con = {}
     for zero_array, acid in zip(zero_1,amino_list):
         dict_con[acid]=zero_array
-   #print(dict_con)
+    #print(dict_con)
     window_size = 3
     pad =int(window_size//2)
    #print(pad)
     str_seq =','.join(sequence)
-   #print(str_seq)
-    new_sequence =(pad*'0'+str_seq+pad*'0')
-    #ew_sequence = ('0'+sequence+'0')
-   #print(new_sequence)
+    #print(str_seq)
+    pad_list = []
+    for seq in sequence:
+        #print(seq)
+        seq_list = []
+        new_sequence =(pad*'0'+seq+pad*'0')
+        seq_list.append(new_sequence)
+        pad_list.extend(seq_list)
+    #print(pad_list)
     list_of_window = []
-    for value in range(0,len(new_sequence)):
-       if (value+window_size)<=len(new_sequence):
-           triple = new_sequence[value:value+(window_size)]
-           list_of_window.append(triple)
-          #print(list_of_window)
+    for element in pad_list:
+        #print(element)
+        for value in range(0,len(element)):
+            #print(value)
+             if (value+window_size)<=len(new_sequence):
+                triple = new_sequence[value:value+(window_size)]
+                list_of_window.append(triple)
+             #print(list_of_window)
     dict_con.update({'0':[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]})
-   #print(dict_con)
+    #print(dict_con)
     read_window = []
     for w in list_of_window:
         nw_list = []
@@ -73,9 +89,9 @@ def reading(y,z):
                 if alphabet == key:
                     nw_list.extend(value)
         read_window.append(nw_list)
-   #print(read_window)
+    #print(read_window)
     x= np.array(read_window)
-   #print(x)
+    print(x)
   
 
     file_a = open(z,'r')
@@ -104,7 +120,7 @@ def reading(y,z):
                
         
    # print(len(sequencea[0]))    
-    dict_topa ={'I':1, 'M':2, 'O':3}
+    dict_topa ={'I':1, 'M':2, 'O':3, 'G':4}
     
     for al in topologya:
         splittinga= list(al)
@@ -153,11 +169,11 @@ def reading(y,z):
         read_windowa.append(nw_lista)
    
     x_test= np.array(read_windowa)
-    classify = svm.SVC()
-    classify.fit(x,y)
-    print(classify.predict(x_test))
+    #classify = svm.SVC()
+    #classify.fit(x,y)
+    #print(classify.predict(x_test)) # convert the final prediction to topology
     #print(x.shape)
-    #print(y.shape)
+    #print(y.shape) 
     file_a.close()
     file_1.close()
 if __name__ =="__main__":
