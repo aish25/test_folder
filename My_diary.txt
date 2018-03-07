@@ -20,4 +20,5 @@ Day 5: Submitted evaluvation of presentation and submitted program to meet proje
 
 Week 4:
 Day 1: Tried to get program to work on more than one sequence
-Day 2: Tried to get program to work on more than one sequence  
+Day 2: Tried to get program to work on more than one sequence 
+Day 3: Program works for more than one sequence. Wrote code for cross validation. 
