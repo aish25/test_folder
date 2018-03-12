@@ -24,3 +24,5 @@ Day 2: Tried to get program to work on more than one sequence
 Day 3: Program works for more than one sequence. Wrote code for cross validation. 
 Day 4: Tried to debug code. Wrote self evaluation of presentation.
 Day 5: Tried to debug code. Submitted self evaluation.
+Week 5:
+Day 1 : Tried to create a confusion matrix 
