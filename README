@@ -5,3 +5,4 @@ test.txt - single sequence used for testing.
 single_seq_corrected.py - A program which converts training and testing sequence into SVM format and predicts the class of the test sequence(final predictor for single sequence)
 model.py- creates a model for prediction using the file seq-data.txt
 test-seq.py- Converts testing sequence into binary and calls model. It then predicts topolgy of the sequence used as test. The file testing.txt has contains sequence to be predicted.
+Confusion.py - Creates a confusion matrix.
