@@ -25,4 +25,8 @@ Day 3: Program works for more than one sequence. Wrote code for cross validation
 Day 4: Tried to debug code. Wrote self evaluation of presentation.
 Day 5: Tried to debug code. Submitted self evaluation.
 Week 5:
-Day 1 : Tried to create a confusion matrix. Write a program to calculate the percentage of various topologies.
+Day 1 : Tried to create a confusion matrix. 
+Day 2 : Worked on final predictor and report
+Day 3 : Read papers
+Day 4 : Read papers
+Day 5 : Submitted the final version of the predictor.
