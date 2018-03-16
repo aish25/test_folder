@@ -6,3 +6,5 @@ single_seq_corrected.py - A program which converts training and testing sequence
 model.py- creates a model for prediction using the file seq-data.txt
 test-seq.py- Converts testing sequence into binary and calls model. It then predicts topolgy of the sequence used as test. The file testing.txt has contains sequence to be predicted.
 Confusion.py - Creates a confusion matrix, uses data1.txt as input data.
+model_fi.py -  Trains data and creates a model. This model will be saved and will be used for prediction. It uses seq-data_fi.txt as training data
+test_seq_fi.py - It will take a test sequence, converts it to binary and the topolgy of this sequence is predicted. testing_fi.txt contains the protein sequence which is used as test. This is the final predictor!
