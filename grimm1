@@ -1,0 +1,5 @@
+Genome 1	Genome 2	Genome 3	Genome 4
+Genome 1	0	855	852	841
+Genome 2	855	0	848	862
+Genome 3	852	848	0	853
+Genome 4	841	862	853	0
